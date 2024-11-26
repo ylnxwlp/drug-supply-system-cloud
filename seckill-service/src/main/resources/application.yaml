@@ -1,0 +1,18 @@
+server:
+  port: 10106
+logging:
+  file:
+    name: seckill-service/src/main/resources/templates/logs.log
+  level:
+    com:
+      supply:
+        mapper: debug
+        service: debug
+        controller: debug
+rate:
+  limit:
+    enabled: true # 是否启用限流
+    limit-type: token-bucket  # 限流算法类型
+    refill-rate: 50  # 每秒生成令牌数
+    burst-capacity: 250  # 桶的最大容量
+    fallback-policy: reject  # 限流策略

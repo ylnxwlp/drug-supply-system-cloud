@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+//指定生成java代码是一个源文件还是多个源文件
+option java_multiple_files = false;
+
+//指定protobuf生成的类放置在哪个包下
+option java_package = "com.supply.api.user";
+
+//指定外部管理类的名字
+option java_outer_classname = "UserProto";
+
+//消息请求类型
+message authenticationRequest{
+  string firmName = 1;
+  oneof usernameOrEmail{
+    string username = 2;
+    string email = 3;
+  }
+}
+
+message authorityRequest{
+  int64 id = 1;
+}
+
+//消息返回类型
+message authenticationResponse {
+  int64 id = 1;
+  string username = 2;
+  string firmName = 3;
+  int32 workType = 4;
+  string image = 5;
+  string email = 6;
+  int32 accountStatus = 7;
+  string telephone = 8;
+  string password = 9;
+  string resume = 10;
+  string createTime = 11;
+  string updateTime = 12;
+  int32 age = 13;
+  string idNumber = 14;
+}
+
+message authorityResponse {
+  repeated string authorities = 1;
+}
+
+
+//定义接口
+service UserService{
+ rpc getUserInformationById(authenticationRequest) returns (authenticationResponse){};
+ rpc getUserAuthority(authorityRequest) returns (authorityResponse){};
+ rpc getUserInformation(authorityRequest) returns (authenticationResponse){};
+}

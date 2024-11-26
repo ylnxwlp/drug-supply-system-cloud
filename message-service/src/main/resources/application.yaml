@@ -1,0 +1,5 @@
+server:
+  port: 10105
+logging:
+  file:
+    name: message-service/src/main/resources/templates/logs.log

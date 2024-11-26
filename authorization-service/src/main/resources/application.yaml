@@ -1,0 +1,13 @@
+server:
+  port: 10101
+drug:
+  locationKey:
+    key: ${drug.locationKey.key}
+logging:
+  file:
+    name: authorization-service/src/main/resources/templates/logs.log
+  level:
+    com:
+      supply:
+        service: debug
+        controller: debug

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+// 指定生成 Java 代码是一个源文件还是多个源文件
+option java_multiple_files = false;
+
+// 指定 protobuf 生成的类放置在哪个包下
+option java_package = "com.supply.api.seckill";
+
+// 指定外部管理类的名字
+option java_outer_classname = "SeckillProto";
+
+// 消息请求类型
+message StoreFlashSaleInformationRequest {
+  int64 flashSaleDrugId = 1;
+  string orderNumber = 2;
+  int64 userId = 3;
+  int32 status = 4;
+  google.protobuf.Timestamp orderTime = 5;  // 使用标准的时间戳类型
+}
+
+message InventoryDeductionRequest {
+ int64 id = 1;
+}
+
+// 定义接口
+service SeckillService {
+  rpc storeFlashSaleInformation(StoreFlashSaleInformationRequest) returns (google.protobuf.Empty);
+  rpc inventoryDeduction(InventoryDeductionRequest) returns (google.protobuf.Empty);
+}

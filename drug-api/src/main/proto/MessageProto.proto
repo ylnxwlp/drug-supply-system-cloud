@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+//指定生成java代码是一个源文件还是多个源文件
+option java_multiple_files = false;
+
+//指定protobuf生成的类放置在哪个包下
+option java_package = "com.supply.api.message";
+
+//指定外部管理类的名字
+option java_outer_classname = "MessageProto";
+
+//消息请求类型
+message codeRequest{
+  string email = 1;
+}
+
+message codeResponse {
+  string code = 1;
+}
+
+//定义接口
+service MessageService{
+ rpc code(codeRequest) returns (codeResponse){};
+}

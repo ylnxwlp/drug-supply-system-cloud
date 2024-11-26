@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: seckill-service
+  cloud:
+    nacos:
+      server-addr: 192.168.65.151
+      config:
+        file-extension: yaml
+        shared-configs: # 共享配置
+          - dataId: shared-jdbc.yaml
+          - dataId: shared-log.yaml
+          - dataId: shared-redis.yaml
+          - dataId: shared-rabbitmq.yaml

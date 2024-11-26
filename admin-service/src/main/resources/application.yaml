@@ -1,0 +1,99 @@
+server:
+  port: 10104
+spring:
+  application:
+    name: admin-service
+  cloud:
+    nacos:
+      server-addr: ${drug.nacos.server-addr}
+    openfeign:
+      okhttp:
+        enabled: true
+  profiles:
+    active: local
+  main:
+    allow-circular-references: true
+  datasource:
+    driver-class-name: ${drug.datasource.driver-class-name}
+    url: jdbc:mysql://${drug.datasource.host}:${drug.datasource.port}/${drug.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: ${drug.datasource.username}
+    password: ${drug.datasource.password}
+  data:
+    redis:
+      cluster:
+        nodes:
+          - 192.168.65.151:6379
+          - 192.168.65.151:6380
+          - 192.168.65.151:6381
+          - 192.168.65.151:6382
+          - 192.168.65.151:6383
+          - 192.168.65.151:6384
+  mail:
+    host: ${drug.mail.host}
+    username: ${drug.mail.username}
+    password: ${drug.mail.password}
+    port: ${drug.mail.port}
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+            required: true
+        debug: true
+  rabbitmq:
+    host: ${drug.rabbitmq.host}
+    port: ${drug.rabbitmq.port}
+    virtual-host: ${drug.rabbitmq.virtual-host}
+    username: ${drug.rabbitmq.username}
+    password: ${drug.rabbitmq.password}
+    template:
+      retry:
+        enabled: true
+        initial-interval: 1000ms
+        multiplier: 1
+        max-attempts: 1
+    listener:
+      simple:
+        prefetch: 1
+        acknowledge-mode: auto
+        retry:
+          enabled: true
+          stateless: false
+#logging:
+#  file:
+#    name: drug-server/src/main/resources/templates/logs.log
+  level:
+    com:
+      supply:
+        mapper: debug
+        service: debug
+        controller: debug
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.supply.entity
+  configuration:
+    map-underscore-to-camel-case: true
+drug:
+  jwt:
+    secretKey: drugSupply
+    ttl: 1209600000
+    tokenName: token
+  alioss:
+    endpoint: ${drug.alioss.endpoint}
+    access-key-id: ${drug.alioss.access-key-id}
+    access-key-secret: ${drug.alioss.access-key-secret}
+    bucket-name: ${drug.alioss.bucket-name}
+  locationKey:
+    key: ${drug.locationKey.key}
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: '药品供应管理系统项目用户服务接口文档'
+      paths-to-match: '/**'
+      packages-to-scan: com.supply.controller

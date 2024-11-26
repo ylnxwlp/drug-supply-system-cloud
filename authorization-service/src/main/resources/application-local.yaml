@@ -1,0 +1,10 @@
+drug:
+  locationKey:
+    key: YLNX[tgA4ZBIkWlbvndEeuhqoB7dVbKyy+xVUTDKuX/MnAWwiPamW7GCb5LUYFiezWpOr/bbH/BYQYWUi8zJ+yMDwzPacPIDcMDbeGGoapJ3SKBY=]
+jasypt:
+  encryptor:
+    password: ylnxwlp
+    property:
+      prefix: "YLNX["
+      suffix: "]"
+    algorithm: PBEWithHmacSHA256AndAES_256
