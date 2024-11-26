@@ -12,5 +12,8 @@ import java.util.List;
 @Primary
 @ConfigurationProperties(prefix = "drug.auth")
 public class AuthProperties {
+
+    private List<String> includePaths;
+
     private List<String> excludePaths;
 }

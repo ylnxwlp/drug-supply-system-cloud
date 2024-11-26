@@ -1,7 +1,6 @@
 package com.supply.consumer;
 
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.supply.domain.entity.IdentityAuthentication;
 import com.supply.service.AdminService;

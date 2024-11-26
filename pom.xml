@@ -41,6 +41,7 @@
         <spring-boot-starter-web.version>3.2.5</spring-boot-starter-web.version>
         <mysql-connector-j.version>8.3.0</mysql-connector-j.version>
         <lombok.version>1.18.30</lombok.version>
+        <websocket.verison>3.2.5</websocket.verison>
         <mybatis-spring-boot-starter.version>3.0.3</mybatis-spring-boot-starter.version>
         <knife4j.version>4.4.0</knife4j.version>
         <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
@@ -254,6 +255,13 @@
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson</artifactId>
                 <version>${redisson.version}</version>
+            </dependency>
+
+            <!--websocket-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-websocket</artifactId>
+                <version>${websocket.verison}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

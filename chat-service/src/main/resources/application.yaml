@@ -1,0 +1,17 @@
+server:
+  port: 10107
+logging:
+  file:
+    name: chat-service/src/main/resources/templates/logs.log
+  level:
+    com:
+      supply:
+        mapper: debug
+        service: debug
+        controller: debug
+springdoc:
+  group-configs:
+    - group: '药品供应管理系统项目聊天服务接口文档'
+      paths-to-match: '/**'
+      packages-to-scan: com.supply.controller
+

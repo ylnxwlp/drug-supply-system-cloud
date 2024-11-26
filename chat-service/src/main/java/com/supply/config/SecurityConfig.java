@@ -1,7 +1,7 @@
 package com.supply.config;
 
 import com.supply.filter.AuthenticationFilter;
-import com.supply.service.impl.AccessDeniedHandlerImpl;
+import com.supply.handler.AccessDeniedHandlerImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
