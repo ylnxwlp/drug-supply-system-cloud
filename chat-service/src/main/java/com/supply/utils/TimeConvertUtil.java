@@ -1,4 +1,4 @@
-package com.supply.message.utils;
+package com.supply.utils;
 
 import com.google.protobuf.Timestamp;
 
@@ -13,13 +13,5 @@ public class TimeConvertUtil {
         Instant instant = Instant.ofEpochSecond(timestamp.getSeconds(), timestamp.getNanos());
         ZonedDateTime zonedDateTime = instant.atZone(ZoneId.of("Asia/Shanghai"));
         return zonedDateTime.toLocalDateTime();
-    }
-
-    public static Timestamp convertLocalDateTimeToTimestamp(LocalDateTime localDateTime) {
-        Instant instant = localDateTime.atZone(ZoneId.of("Asia/Shanghai")).toInstant();
-        return Timestamp.newBuilder()
-                .setSeconds(instant.getEpochSecond())
-                .setNanos(instant.getNano())
-                .build();
     }
 }

@@ -4,8 +4,6 @@
 // Protobuf Java Version: 3.25.5
 package com.supply.api.seckill;
 
-import com.google.protobuf.Timestamp;
-
 public final class SeckillProto {
   private SeckillProto() {}
   public static void registerAllExtensions(
@@ -66,10 +64,9 @@ public final class SeckillProto {
      * </pre>
      *
      * <code>.google.protobuf.Timestamp orderTime = 5;</code>
-     *
      * @return The orderTime.
      */
-    Timestamp getOrderTime();
+    com.google.protobuf.Timestamp getOrderTime();
     /**
      * <pre>
      * 使用标准的时间戳类型
@@ -212,11 +209,10 @@ public final class SeckillProto {
      * </pre>
      *
      * <code>.google.protobuf.Timestamp orderTime = 5;</code>
-     *
      * @return The orderTime.
      */
     @java.lang.Override
-    public Timestamp getOrderTime() {
+    public com.google.protobuf.Timestamp getOrderTime() {
       return orderTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : orderTime_;
     }
     /**
@@ -865,10 +861,9 @@ public final class SeckillProto {
        * </pre>
        *
        * <code>.google.protobuf.Timestamp orderTime = 5;</code>
-       *
        * @return The orderTime.
        */
-      public Timestamp getOrderTime() {
+      public com.google.protobuf.Timestamp getOrderTime() {
         if (orderTimeBuilder_ == null) {
           return orderTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : orderTime_;
         } else {

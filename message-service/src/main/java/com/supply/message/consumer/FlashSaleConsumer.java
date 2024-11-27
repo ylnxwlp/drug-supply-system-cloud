@@ -76,7 +76,7 @@ public class FlashSaleConsumer {
                         .setOrderNumber(flashSaleInformation.getOrderNumber().toString())
                         .setUserId(flashSaleInformation.getUserId())
                         .setStatus(2)
-                        .setOrderTime(TimeConvertUtil.convertLocalDateTimeToTimestamp(flashSaleInformation.getOrderTime(), "Asia/Shanghai"))
+                        .setOrderTime(TimeConvertUtil.convertLocalDateTimeToTimestamp(flashSaleInformation.getOrderTime()))
                         .build();
                 SeckillProto.StoreFlashSaleInformationRequest build = builder.build();
                 seckillServiceBlockingStub.storeFlashSaleInformation(build);

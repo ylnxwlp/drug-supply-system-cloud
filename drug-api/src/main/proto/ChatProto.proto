@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+//指定生成java代码是一个源文件还是多个源文件
+option java_multiple_files = false;
+
+//指定protobuf生成的类放置在哪个包下
+option java_package = "com.supply.api.chat";
+
+//指定外部管理类的名字
+option java_outer_classname = "ChatProto";
+
+//消息请求类型
+message webSocketOnCloseRequest{
+  string message = 1;
+}
+
+message storeChatInformationRequest{
+  int64 id = 1;
+  int64 queueId = 2;
+  int64 sendUserId = 3;
+  int64 receiveUserId = 4;
+  string information = 5;
+  string image = 6;
+  google.protobuf.Timestamp sendTime = 7;
+}
+
+message sendMessageToUserRequest{
+  string content = 1;
+  bool isInformation = 2;
+  int64 userId = 3;
+  int64 toUserId = 4;
+  google.protobuf.Timestamp sendTime = 5;
+}
+
+
+//定义接口
+service ChatService{
+  rpc webSocketOnClose(webSocketOnCloseRequest) returns (google.protobuf.Empty);
+  rpc storeChatInformation(storeChatInformationRequest) returns (google.protobuf.Empty);
+  rpc sendMessageToUser(sendMessageToUserRequest) returns (google.protobuf.Empty);
+}

@@ -3,6 +3,9 @@ package com.supply.service.impl;
 import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.RandomUtil;
+import com.google.protobuf.Empty;
+import com.supply.api.chat.ChatProto;
+import com.supply.api.chat.ChatServiceGrpc;
 import com.supply.api.user.UserProto;
 import com.supply.api.user.UserServiceGrpc;
 import com.supply.constant.MessageConstant;
@@ -15,8 +18,11 @@ import com.supply.domain.vo.ChatQueuesVO;
 import com.supply.exception.InstanceNotFoundException;
 import com.supply.mapper.ChatMapper;
 import com.supply.service.ChatService;
+import com.supply.utils.TimeConvertUtil;
+import com.supply.websocket.ChatEndPoint;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.client.ServiceInstance;
@@ -36,9 +42,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class ChatServiceImpl implements ChatService {
+public class ChatServiceImpl extends ChatServiceGrpc.ChatServiceImplBase implements ChatService {
 
     private final ChatMapper chatMapper;
+
+    private final ChatEndPoint chatEndPoint;
 
     private final RedisTemplate<Object, Object> redisTemplate;
 
@@ -86,7 +94,7 @@ public class ChatServiceImpl implements ChatService {
                 URI uri = instances.get(currentIndex).getUri();
                 String host = uri.getHost();
                 int port = uri.getPort();
-                log.info("当前轮询到：{}：{}", host,port);
+                log.info("当前轮询到：{}：{}", host, port);
                 ManagedChannel managedChannel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
                 UserProto.authenticationResponse response;
                 try {
@@ -214,18 +222,6 @@ public class ChatServiceImpl implements ChatService {
         return list;
     }
 
-    @Transactional
-    public void webSocketOnClose(String message) {
-        //对所有没有聊天的队列进行删除
-        List<ChatQueue> chatQueues = chatMapper.getAllQueueByUserId(Long.valueOf(message));
-        for (ChatQueue chatQueue : chatQueues) {
-            List<ChatInformation> chatInformation = chatMapper.getChatInformationByQueueId(chatQueue.getId());
-            if (chatInformation == null || chatInformation.isEmpty()) {
-                chatMapper.deleteQueueById(chatQueue.getId());
-            }
-        }
-    }
-
     /**
      * 获取当前登录用户的ID
      */
@@ -233,5 +229,55 @@ public class ChatServiceImpl implements ChatService {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         LoginUser loginUser = (LoginUser) authentication.getPrincipal();
         return loginUser.getUser().getId();
+    }
+
+    /**
+     * 聊天断开时的操作
+     *
+     * @param request          请求信息
+     * @param responseObserver 响应封装信息
+     */
+    public void webSocketOnClose(ChatProto.webSocketOnCloseRequest request, StreamObserver<Empty> responseObserver) {
+        //对所有没有聊天的队列进行删除
+        List<ChatQueue> chatQueues = chatMapper.getAllQueueByUserId(Long.valueOf(request.getMessage()));
+        for (ChatQueue chatQueue : chatQueues) {
+            List<ChatInformation> chatInformation = chatMapper.getChatInformationByQueueId(chatQueue.getId());
+            if (chatInformation == null || chatInformation.isEmpty()) {
+                chatMapper.deleteQueueById(chatQueue.getId());
+            }
+        }
+        responseObserver.onNext(Empty.getDefaultInstance());
+        responseObserver.onCompleted();
+    }
+
+    /**
+     * 存储聊天信息
+     *
+     * @param request          聊天信息
+     * @param responseObserver 封装响应
+     */
+    public void storeChatInformation(ChatProto.storeChatInformationRequest request, StreamObserver<Empty> responseObserver) {
+        ChatInformation chatInformation = ChatInformation.builder()
+                .queueId(request.getQueueId())
+                .sendUserId(request.getSendUserId())
+                .receiveUserId(request.getReceiveUserId())
+                .sendTime(TimeConvertUtil.convert(request.getSendTime()))
+                .image(request.getImage())
+                .build();
+        chatMapper.storeChatInformation(chatInformation);
+        responseObserver.onNext(Empty.getDefaultInstance());
+        responseObserver.onCompleted();
+    }
+
+    /**
+     * 发送离线消息给用户
+     *
+     * @param request          离线消息
+     * @param responseObserver 封装响应
+     */
+    public void sendMessageToUser(ChatProto.sendMessageToUserRequest request, StreamObserver<Empty> responseObserver) {
+        chatEndPoint.sendMessageToUser(request.getContent(), request.getUserId(), request.getToUserId(), request.getIsInformation(), TimeConvertUtil.convert(request.getSendTime()));
+        responseObserver.onNext(Empty.getDefaultInstance());
+        responseObserver.onCompleted();
     }
 }
