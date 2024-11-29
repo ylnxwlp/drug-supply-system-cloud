@@ -4,24 +4,20 @@ import com.alibaba.nacos.api.exception.NacosException;
 import com.alibaba.nacos.api.naming.NamingFactory;
 import com.alibaba.nacos.api.naming.NamingService;
 import com.supply.mapper.ChatMapper;
-import com.supply.mapper.SeckillMapper;
 import com.supply.service.impl.ChatServiceImpl;
-import com.supply.service.impl.SeckillServiceImpl;
+import com.supply.websocket.ChatEndPoint;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.redisson.api.RedissonClient;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import java.io.IOException;
 import java.net.InetAddress;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @Configuration
 @RequiredArgsConstructor
@@ -34,13 +30,15 @@ public class GrpcServerConfig {
 
     private final RedisTemplate<Object, Object> redisTemplate;
 
+    private final ChatEndPoint chatEndPoint;
+
     private final DiscoveryClient discoveryClient;
 
     @PostConstruct
     public void start() throws IOException, NacosException {
         // 绑定端口
         ServerBuilder<?> serverBuilder = ServerBuilder.forPort(0);
-        serverBuilder.addService(new ChatServiceImpl(chatMapper,redisTemplate,discoveryClient));
+        serverBuilder.addService(new ChatServiceImpl(chatMapper,chatEndPoint,redisTemplate,discoveryClient));
         server = serverBuilder.build().start();
         int port = server.getPort(); // 获取随机分配的端口
         NamingService namingService = NamingFactory.createNamingService("192.168.65.151:8848");

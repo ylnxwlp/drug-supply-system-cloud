@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      server-addr: 192.168.65.151
+      config:
+        file-extension: yaml
+        shared-configs:
+          - dataId: shared-log.yaml

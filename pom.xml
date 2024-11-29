@@ -42,6 +42,7 @@
         <mysql-connector-j.version>8.3.0</mysql-connector-j.version>
         <lombok.version>1.18.30</lombok.version>
         <websocket.verison>3.2.5</websocket.verison>
+        <skywalking.verison>9.3.0</skywalking.verison>
         <mybatis-spring-boot-starter.version>3.0.3</mybatis-spring-boot-starter.version>
         <knife4j.version>4.4.0</knife4j.version>
         <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
