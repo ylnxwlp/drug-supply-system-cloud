@@ -208,3 +208,886 @@
 2024-11-29T08:57:44.567+08:00  INFO 12568 --- [message-service] [main] c.a.n.client.config.impl.ClientWorker    : [fixed-192.168.65.151_8848] [subscribe] message-service.yaml+DEFAULT_GROUP
 2024-11-29T08:57:44.567+08:00  INFO 12568 --- [message-service] [main] c.a.nacos.client.config.impl.CacheData   : [fixed-192.168.65.151_8848] [add-listener] ok, tenant=, dataId=message-service.yaml, group=DEFAULT_GROUP, cnt=1
 2024-11-29T08:57:44.567+08:00  INFO 12568 --- [message-service] [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=message-service.yaml, group=DEFAULT_GROUP
+2024-11-29T09:12:42.826+08:00  INFO 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.supply.message.consumer.EmailConsumer  : 接收到email.direct的消息：{"emailAddress":"2720203124@qq.com","emailType":"LOGIN","location":"局域网[]"},2024-11-29 09:12:42
+2024-11-29T09:12:46.822+08:00  INFO 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] com.supply.message.utils.EmailUtil       : 发送邮件成功：3352580660@qq.com->2720203124@qq.com
+2024-11-29T09:41:19.017+08:00  WARN 12568 --- [message-service] [AMQP Connection 192.168.65.151:5672] c.r.c.impl.ForgivingExceptionHandler     : An unexpected connection driver error occurred (Exception message: Connection reset)
+2024-11-29T09:41:19.624+08:00  INFO 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-1] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@478c84aa: tags=[[amq.ctag-UyBLmED-MJ-b5nV47RQFqQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://drug@192.168.65.151:5672//drug,4), conn: Proxy@565c887e Shared Rabbit Connection: SimpleConnection@6ee186f3 [delegate=amqp://drug@192.168.65.151:5672//drug, localPort=63136], acknowledgeMode=AUTO local queue size=0
+2024-11-29T09:41:19.624+08:00  INFO 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@77d58f3a: tags=[[amq.ctag-iJCBA44uE3Yvai7MRXe9Bg]], channel=Cached Rabbit Channel: AMQChannel(amqp://drug@192.168.65.151:5672//drug,2), conn: Proxy@565c887e Shared Rabbit Connection: SimpleConnection@6ee186f3 [delegate=amqp://drug@192.168.65.151:5672//drug, localPort=63136], acknowledgeMode=AUTO local queue size=0
+2024-11-29T09:41:19.624+08:00  INFO 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@738ed8f5: tags=[[amq.ctag-xBxJ3rMHakMqu6xoCfsKqQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://drug@192.168.65.151:5672//drug,3), conn: Proxy@565c887e Shared Rabbit Connection: SimpleConnection@6ee186f3 [delegate=amqp://drug@192.168.65.151:5672//drug, localPort=63136], acknowledgeMode=AUTO local queue size=0
+2024-11-29T09:41:19.624+08:00  INFO 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@18d1d137: tags=[[amq.ctag-VXQBy0nz0Hq3FIqSvtW93A]], channel=Cached Rabbit Channel: AMQChannel(amqp://drug@192.168.65.151:5672//drug,5), conn: Proxy@565c887e Shared Rabbit Connection: SimpleConnection@6ee186f3 [delegate=amqp://drug@192.168.65.151:5672//drug, localPort=63136], acknowledgeMode=AUTO local queue size=0
+2024-11-29T09:41:19.653+08:00  INFO 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.65.151:5672]
+2024-11-29T09:41:19.734+08:00  INFO 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@7d5d77a6: tags=[[amq.ctag-67APf1wXl4Kwl2t2u9XmSQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://drug@192.168.65.151:5672//drug,1), conn: Proxy@565c887e Shared Rabbit Connection: null, acknowledgeMode=AUTO local queue size=0
+2024-11-29T09:41:20.166+08:00 ERROR 12568 --- [message-service] [nacos-grpc-client-executor-192.168.65.151-534] c.a.n.c.remote.client.grpc.GrpcClient    : [1732841858956_192.168.65.1_63108]Request stream error, switch server,error={}
+
+com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: CANCELLED: RST_STREAM closed stream. HTTP/2 error code: CANCEL
+	at com.alibaba.nacos.shaded.io.grpc.Status.asRuntimeException(Status.java:537) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:491) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:567) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:71) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:735) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:716) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-11-29T09:41:20.166+08:00 ERROR 12568 --- [message-service] [nacos-grpc-client-executor-192.168.65.151-513] c.a.n.c.remote.client.grpc.GrpcClient    : [1732841860595_192.168.65.1_63124]Request stream error, switch server,error={}
+
+com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: CANCELLED: RST_STREAM closed stream. HTTP/2 error code: CANCEL
+	at com.alibaba.nacos.shaded.io.grpc.Status.asRuntimeException(Status.java:537) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:491) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:567) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:71) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:735) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:716) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-11-29T09:41:20.199+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] com.alibaba.nacos.common.remote.client   : [fab9076c-0844-48fd-bf32-9ce3d37f6187] Try to reconnect to a new server, server is  not appointed, will choose a random server.
+2024-11-29T09:41:20.199+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] com.alibaba.nacos.common.remote.client   : [5ef5c4bf-46df-4094-8d85-97743b73e373_config-0] Try to reconnect to a new server, server is  not appointed, will choose a random server.
+2024-11-29T09:41:20.208+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T09:41:20.208+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T09:41:21.735+08:00  INFO 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.65.151:5672]
+2024-11-29T09:41:21.735+08:00 ERROR 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:622) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:727) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareChannel(CachingConnectionFactory.java:672) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.getCachedChannelProxy(CachingConnectionFactory.java:645) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.getChannel(CachingConnectionFactory.java:534) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$ChannelCachingConnectionProxy.createChannel(CachingConnectionFactory.java:1503) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2255) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2222) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2202) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:467) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:451) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1960) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1924) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1478) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1320) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:554) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61) ~[amqp-client-5.19.0.jar:5.19.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249) ~[amqp-client-5.19.0.jar:5.19.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198) ~[amqp-client-5.19.0.jar:5.19.0]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:668) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:637) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:584) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	... 15 common frames omitted
+
+2024-11-29T09:41:22.287+08:00 ERROR 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.65.151 ,port 9848 is available , error ={}
+
+java.util.concurrent.ExecutionException: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.getDoneValue(AbstractFuture.java:592) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:467) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:243) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:367) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:502) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$1(RpcClient.java:329) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.io.grpc.Status.asRuntimeException(Status.java:537) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:548) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener$3.run(DelayedClientCall.java:489) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener.delayOrExecute(DelayedClientCall.java:453) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener.onClose(DelayedClientCall.java:486) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:567) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:71) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:735) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:716) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133) ~[nacos-client-2.3.2.jar:na]
+	... 3 common frames omitted
+Caused by: com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /192.168.65.151:9848
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[na:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-11-29T09:41:22.287+08:00 ERROR 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.65.151 ,port 9848 is available , error ={}
+
+java.util.concurrent.ExecutionException: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.getDoneValue(AbstractFuture.java:592) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:467) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:243) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:367) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:502) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$1(RpcClient.java:329) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.io.grpc.Status.asRuntimeException(Status.java:537) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:548) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener$3.run(DelayedClientCall.java:489) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener.delayOrExecute(DelayedClientCall.java:453) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener.onClose(DelayedClientCall.java:486) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:567) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:71) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:735) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:716) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133) ~[nacos-client-2.3.2.jar:na]
+	... 3 common frames omitted
+Caused by: com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /192.168.65.151:9848
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[na:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-11-29T09:41:22.407+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T09:41:22.407+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T09:41:23.796+08:00  INFO 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.65.151:5672]
+2024-11-29T09:41:23.796+08:00 ERROR 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:622) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:727) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareChannel(CachingConnectionFactory.java:672) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.getCachedChannelProxy(CachingConnectionFactory.java:645) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.getChannel(CachingConnectionFactory.java:534) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$ChannelCachingConnectionProxy.createChannel(CachingConnectionFactory.java:1503) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2255) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2222) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2202) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:467) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:451) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1960) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1924) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1478) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1320) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:554) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61) ~[amqp-client-5.19.0.jar:5.19.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249) ~[amqp-client-5.19.0.jar:5.19.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198) ~[amqp-client-5.19.0.jar:5.19.0]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:668) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:637) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:584) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	... 15 common frames omitted
+
+2024-11-29T09:41:24.444+08:00 ERROR 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.65.151 ,port 9848 is available , error ={}
+
+java.util.concurrent.ExecutionException: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.getDoneValue(AbstractFuture.java:592) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:467) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:243) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:367) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:502) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$1(RpcClient.java:329) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.io.grpc.Status.asRuntimeException(Status.java:537) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:548) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener$3.run(DelayedClientCall.java:489) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener.delayOrExecute(DelayedClientCall.java:453) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener.onClose(DelayedClientCall.java:486) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:567) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:71) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:735) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:716) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133) ~[nacos-client-2.3.2.jar:na]
+	... 3 common frames omitted
+Caused by: com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /192.168.65.151:9848
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[na:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-11-29T09:41:24.446+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] com.alibaba.nacos.common.remote.client   : [fab9076c-0844-48fd-bf32-9ce3d37f6187] Fail to connect server, after trying 1 times, last try server is {serverIp = '192.168.65.151', server main port = 8848}, error = unknown
+2024-11-29T09:41:24.459+08:00 ERROR 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.65.151 ,port 9848 is available , error ={}
+
+java.util.concurrent.ExecutionException: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.getDoneValue(AbstractFuture.java:592) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:467) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:243) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:367) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:502) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$1(RpcClient.java:329) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.io.grpc.Status.asRuntimeException(Status.java:537) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:548) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener$3.run(DelayedClientCall.java:489) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener.delayOrExecute(DelayedClientCall.java:453) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener.onClose(DelayedClientCall.java:486) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:567) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:71) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:735) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:716) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133) ~[nacos-client-2.3.2.jar:na]
+	... 3 common frames omitted
+Caused by: com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /192.168.65.151:9848
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[na:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-11-29T09:41:24.463+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] com.alibaba.nacos.common.remote.client   : [5ef5c4bf-46df-4094-8d85-97743b73e373_config-0] Fail to connect server, after trying 1 times, last try server is {serverIp = '192.168.65.151', server main port = 8848}, error = unknown
+2024-11-29T09:41:24.657+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T09:41:24.673+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T09:41:25.827+08:00  INFO 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.65.151:5672]
+2024-11-29T09:41:25.827+08:00 ERROR 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:622) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:727) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareChannel(CachingConnectionFactory.java:672) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.getCachedChannelProxy(CachingConnectionFactory.java:645) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.getChannel(CachingConnectionFactory.java:534) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$ChannelCachingConnectionProxy.createChannel(CachingConnectionFactory.java:1503) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2255) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2222) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2202) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:467) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:451) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1960) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1924) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1478) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1320) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:554) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61) ~[amqp-client-5.19.0.jar:5.19.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249) ~[amqp-client-5.19.0.jar:5.19.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198) ~[amqp-client-5.19.0.jar:5.19.0]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:668) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:637) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:584) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	... 15 common frames omitted
+
+2024-11-29T09:41:26.706+08:00 ERROR 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.65.151 ,port 9848 is available , error ={}
+
+java.util.concurrent.ExecutionException: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.getDoneValue(AbstractFuture.java:592) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:467) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:243) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:367) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:502) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$1(RpcClient.java:329) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.io.grpc.Status.asRuntimeException(Status.java:537) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:548) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener$3.run(DelayedClientCall.java:489) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener.delayOrExecute(DelayedClientCall.java:453) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener.onClose(DelayedClientCall.java:486) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:567) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:71) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:735) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:716) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133) ~[nacos-client-2.3.2.jar:na]
+	... 3 common frames omitted
+Caused by: com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /192.168.65.151:9848
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[na:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-11-29T09:41:26.708+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] com.alibaba.nacos.common.remote.client   : [fab9076c-0844-48fd-bf32-9ce3d37f6187] Fail to connect server, after trying 2 times, last try server is {serverIp = '192.168.65.151', server main port = 8848}, error = unknown
+2024-11-29T09:41:26.721+08:00 ERROR 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.65.151 ,port 9848 is available , error ={}
+
+java.util.concurrent.ExecutionException: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.getDoneValue(AbstractFuture.java:592) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:467) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:243) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:367) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:502) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$1(RpcClient.java:329) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.io.grpc.Status.asRuntimeException(Status.java:537) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:548) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener$3.run(DelayedClientCall.java:489) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener.delayOrExecute(DelayedClientCall.java:453) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener.onClose(DelayedClientCall.java:486) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:567) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:71) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:735) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:716) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133) ~[nacos-client-2.3.2.jar:na]
+	... 3 common frames omitted
+Caused by: com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /192.168.65.151:9848
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[na:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-11-29T09:41:26.723+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] com.alibaba.nacos.common.remote.client   : [5ef5c4bf-46df-4094-8d85-97743b73e373_config-0] Fail to connect server, after trying 2 times, last try server is {serverIp = '192.168.65.151', server main port = 8848}, error = unknown
+2024-11-29T09:41:27.013+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T09:41:27.028+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T09:41:27.860+08:00  INFO 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.65.151:5672]
+2024-11-29T09:41:27.860+08:00 ERROR 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:622) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:727) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareChannel(CachingConnectionFactory.java:672) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.getCachedChannelProxy(CachingConnectionFactory.java:645) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.getChannel(CachingConnectionFactory.java:534) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$ChannelCachingConnectionProxy.createChannel(CachingConnectionFactory.java:1503) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2255) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2222) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2202) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:467) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:451) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1960) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1924) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1478) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1320) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:554) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61) ~[amqp-client-5.19.0.jar:5.19.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249) ~[amqp-client-5.19.0.jar:5.19.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198) ~[amqp-client-5.19.0.jar:5.19.0]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:668) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:637) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:584) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	... 15 common frames omitted
+
+2024-11-29T09:41:29.047+08:00 ERROR 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.65.151 ,port 9848 is available , error ={}
+
+java.util.concurrent.ExecutionException: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.getDoneValue(AbstractFuture.java:592) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:467) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:243) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:367) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:502) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$1(RpcClient.java:329) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.io.grpc.Status.asRuntimeException(Status.java:537) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:548) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener$3.run(DelayedClientCall.java:489) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener.delayOrExecute(DelayedClientCall.java:453) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener.onClose(DelayedClientCall.java:486) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:567) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:71) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:735) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:716) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133) ~[nacos-client-2.3.2.jar:na]
+	... 3 common frames omitted
+Caused by: com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /192.168.65.151:9848
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[na:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-11-29T09:41:29.049+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] com.alibaba.nacos.common.remote.client   : [fab9076c-0844-48fd-bf32-9ce3d37f6187] Fail to connect server, after trying 3 times, last try server is {serverIp = '192.168.65.151', server main port = 8848}, error = unknown
+2024-11-29T09:41:29.078+08:00 ERROR 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.65.151 ,port 9848 is available , error ={}
+
+java.util.concurrent.ExecutionException: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.getDoneValue(AbstractFuture.java:592) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:467) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:243) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:367) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:502) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$1(RpcClient.java:329) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.io.grpc.Status.asRuntimeException(Status.java:537) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:548) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener$3.run(DelayedClientCall.java:489) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener.delayOrExecute(DelayedClientCall.java:453) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.DelayedClientCall$DelayedListener.onClose(DelayedClientCall.java:486) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:567) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:71) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:735) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:716) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133) ~[nacos-client-2.3.2.jar:na]
+	... 3 common frames omitted
+Caused by: com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /192.168.65.151:9848
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[na:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-11-29T09:41:29.079+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] com.alibaba.nacos.common.remote.client   : [5ef5c4bf-46df-4094-8d85-97743b73e373_config-0] Fail to connect server, after trying 3 times, last try server is {serverIp = '192.168.65.151', server main port = 8848}, error = unknown
+2024-11-29T09:41:29.460+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T09:41:29.491+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T09:41:32.464+08:00 ERROR 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.65.151 ,port 9848 is available , error ={}
+
+java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 938800 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@4a8d9e01[status=PENDING, info=[GrpcFuture{clientCall=PendingCall{realCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@5f8c8925, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@7a7768ea, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@5c28f84}}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:531) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:243) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:367) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:502) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$1(RpcClient.java:329) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-11-29T09:41:32.466+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] com.alibaba.nacos.common.remote.client   : [fab9076c-0844-48fd-bf32-9ce3d37f6187] Fail to connect server, after trying 4 times, last try server is {serverIp = '192.168.65.151', server main port = 8848}, error = unknown
+2024-11-29T09:41:32.494+08:00 ERROR 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.65.151 ,port 9848 is available , error ={}
+
+java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 1 milliseconds, 317300 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@3fb186e[status=PENDING, info=[GrpcFuture{clientCall=PendingCall{realCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@5f8c8925, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@7a7768ea, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@5c28f84}}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:531) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:243) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:367) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:502) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$1(RpcClient.java:329) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-11-29T09:41:32.495+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] com.alibaba.nacos.common.remote.client   : [5ef5c4bf-46df-4094-8d85-97743b73e373_config-0] Fail to connect server, after trying 4 times, last try server is {serverIp = '192.168.65.151', server main port = 8848}, error = unknown
+2024-11-29T09:41:32.975+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T09:41:33.007+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T09:41:35.891+08:00  INFO 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.65.151:5672]
+2024-11-29T09:41:35.891+08:00 ERROR 12568 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection timed out: no further information
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:622) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:727) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:257) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2249) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2222) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2202) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:467) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:451) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1960) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1924) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1478) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1320) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: java.net.ConnectException: Connection timed out: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:554) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61) ~[amqp-client-5.19.0.jar:5.19.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249) ~[amqp-client-5.19.0.jar:5.19.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198) ~[amqp-client-5.19.0.jar:5.19.0]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:668) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:637) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:584) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	... 12 common frames omitted
+
+2024-11-29T09:41:35.984+08:00 ERROR 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.65.151 ,port 9848 is available , error ={}
+
+java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 7 milliseconds, 734700 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@88293e[status=PENDING, info=[GrpcFuture{clientCall=PendingCall{realCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@5f8c8925, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@7a7768ea, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@5c28f84}}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:531) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:243) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:367) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:502) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$1(RpcClient.java:329) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-11-29T09:41:35.985+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] com.alibaba.nacos.common.remote.client   : [fab9076c-0844-48fd-bf32-9ce3d37f6187] Fail to connect server, after trying 5 times, last try server is {serverIp = '192.168.65.151', server main port = 8848}, error = unknown
+2024-11-29T09:41:36.016+08:00 ERROR 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.65.151 ,port 9848 is available , error ={}
+
+java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 7 milliseconds, 49600 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@2c2292dc[status=PENDING, info=[GrpcFuture{clientCall=PendingCall{realCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@5f8c8925, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@7a7768ea, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@5c28f84}}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:531) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:243) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:367) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:502) ~[nacos-client-2.3.2.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$1(RpcClient.java:329) ~[nacos-client-2.3.2.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-11-29T09:41:36.017+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] com.alibaba.nacos.common.remote.client   : [5ef5c4bf-46df-4094-8d85-97743b73e373_config-0] Fail to connect server, after trying 5 times, last try server is {serverIp = '192.168.65.151', server main port = 8848}, error = unknown
+2024-11-29T09:41:36.598+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T09:41:36.631+08:00  INFO 12568 --- [message-service] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T12:01:02.447+08:00  INFO 2432 --- [message-service] [main] c.a.n.c.c.impl.LocalConfigInfoProcessor  : LOCAL_SNAPSHOT_PATH:C:\Users\jjjj\nacos\config
+2024-11-29T12:01:02.453+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of ac06fcac-840f-4a77-af8a-575ed4fb099a_config-0
+2024-11-29T12:01:02.473+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [ac06fcac-840f-4a77-af8a-575ed4fb099a_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$491/0x000001d3812bf758
+2024-11-29T12:01:02.474+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [ac06fcac-840f-4a77-af8a-575ed4fb099a_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$492/0x000001d3812bfb78
+2024-11-29T12:01:02.474+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [ac06fcac-840f-4a77-af8a-575ed4fb099a_config-0] Registry connection listener to current client:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$1
+2024-11-29T12:01:02.475+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [ac06fcac-840f-4a77-af8a-575ed4fb099a_config-0] RpcClient init, ServerListFactory = com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$2
+2024-11-29T12:01:02.484+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [ac06fcac-840f-4a77-af8a-575ed4fb099a_config-0] Try to connect to server on start up, server: {serverIp = '192.168.65.151', server main port = 8848}
+2024-11-29T12:01:02.526+08:00  INFO 2432 --- [message-service] [main] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T12:01:03.325+08:00  INFO 2432 --- [message-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Ready to get current node abilities...
+2024-11-29T12:01:03.326+08:00  INFO 2432 --- [message-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Ready to initialize current node abilities, support modes: [SDK_CLIENT]
+2024-11-29T12:01:03.327+08:00  INFO 2432 --- [message-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Initialize current abilities finish...
+2024-11-29T12:01:03.327+08:00  INFO 2432 --- [message-service] [main] c.a.n.c.a.d.NacosAbilityManagerHolder    : [AbilityControlManager] Successfully initialize AbilityControlManager
+2024-11-29T12:01:03.437+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [ac06fcac-840f-4a77-af8a-575ed4fb099a_config-0] Success to connect to server [192.168.65.151:8848] on start up, connectionId = 1732852862229_192.168.65.1_50492
+2024-11-29T12:01:03.438+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [ac06fcac-840f-4a77-af8a-575ed4fb099a_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-11-29T12:01:03.438+08:00  INFO 2432 --- [message-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.common.remote.client   : [ac06fcac-840f-4a77-af8a-575ed4fb099a_config-0] Notify connected event to listeners.
+2024-11-29T12:01:03.438+08:00  INFO 2432 --- [message-service] [com.alibaba.nacos.client.remote.worker.0] c.a.n.client.config.impl.ClientWorker    : [ac06fcac-840f-4a77-af8a-575ed4fb099a_config-0] Connected,notify listen context...
+2024-11-29T12:01:03.439+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [ac06fcac-840f-4a77-af8a-575ed4fb099a_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$513/0x000001d38144a2f8
+2024-11-29T12:01:03.481+08:00  INFO 2432 --- [message-service] [main] c.a.nacos.client.config.impl.Limiter     : limitTime:5.0
+2024-11-29T12:01:03.504+08:00  INFO 2432 --- [message-service] [main] c.a.nacos.client.config.utils.JvmUtil    : isMultiInstance:false
+2024-11-29T12:01:03.569+08:00  WARN 2432 --- [message-service] [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[message-service] & group[DEFAULT_GROUP]
+2024-11-29T12:01:03.578+08:00  WARN 2432 --- [message-service] [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[message-service.yaml] & group[DEFAULT_GROUP]
+2024-11-29T12:01:03.579+08:00  INFO 2432 --- [message-service] [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-message-service.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-message-service,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-shared-jwt.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-shared-rabbitmq.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-shared-mail.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-shared-redis.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-shared-log.yaml,DEFAULT_GROUP'}]
+2024-11-29T12:01:03.595+08:00  INFO 2432 --- [message-service] [main] com.supply.MessageApplication            : No active profile set, falling back to 1 default profile: "default"
+2024-11-29T12:01:03.959+08:00  INFO 2432 --- [message-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-29T12:01:03.961+08:00  INFO 2432 --- [message-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-29T12:01:04.013+08:00  INFO 2432 --- [message-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 0 Redis repository interfaces.
+2024-11-29T12:01:04.188+08:00  INFO 2432 --- [message-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3cdf7ab8-2bc1-3e78-8753-9c6e6e8f2bb9
+2024-11-29T12:01:05.003+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from ans.namespace attribute : null
+2024-11-29T12:01:05.004+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+2024-11-29T12:01:05.004+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from namespace attribute :null
+2024-11-29T12:01:05.013+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.client.naming          : FailoverDataSource type is class com.alibaba.nacos.client.naming.backups.datasource.DiskFailoverDataSource
+2024-11-29T12:01:05.019+08:00  INFO 2432 --- [message-service] [main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2024-11-29T12:01:05.020+08:00  INFO 2432 --- [message-service] [main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2024-11-29T12:01:05.025+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of b06efc04-b883-4cc5-bae6-2715b37c1d55
+2024-11-29T12:01:05.027+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.client.naming          : Create naming rpc client for uuid->b06efc04-b883-4cc5-bae6-2715b37c1d55
+2024-11-29T12:01:05.028+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [b06efc04-b883-4cc5-bae6-2715b37c1d55] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2024-11-29T12:01:05.028+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [b06efc04-b883-4cc5-bae6-2715b37c1d55] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2024-11-29T12:01:05.028+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [b06efc04-b883-4cc5-bae6-2715b37c1d55] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2024-11-29T12:01:05.029+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [b06efc04-b883-4cc5-bae6-2715b37c1d55] Try to connect to server on start up, server: {serverIp = '192.168.65.151', server main port = 8848}
+2024-11-29T12:01:05.029+08:00  INFO 2432 --- [message-service] [main] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T12:01:05.162+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [b06efc04-b883-4cc5-bae6-2715b37c1d55] Success to connect to server [192.168.65.151:8848] on start up, connectionId = 1732852864017_192.168.65.1_50500
+2024-11-29T12:01:05.162+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [b06efc04-b883-4cc5-bae6-2715b37c1d55] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-11-29T12:01:05.162+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [b06efc04-b883-4cc5-bae6-2715b37c1d55] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$513/0x000001d38144a2f8
+2024-11-29T12:01:05.162+08:00  INFO 2432 --- [message-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.common.remote.client   : [b06efc04-b883-4cc5-bae6-2715b37c1d55] Notify connected event to listeners.
+2024-11-29T12:01:05.162+08:00  INFO 2432 --- [message-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.client.naming          : Grpc connection connect
+2024-11-29T12:01:05.165+08:00  INFO 2432 --- [message-service] [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] public registering service message-service-grpc with instance Instance{instanceId='null', ip='192.168.65.1', port=50499, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+2024-11-29T12:01:05.195+08:00  INFO 2432 --- [message-service] [main] c.s.message.config.GrpcServerConfig      : messageService的gRPC服务启动，监听端口：50499
+2024-11-29T12:01:07.118+08:00  INFO 2432 --- [message-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2024-11-29T12:01:16.342+08:00  INFO 2432 --- [message-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2024-11-29T12:01:17.296+08:00  INFO 2432 --- [message-service] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.65.151:5672]
+2024-11-29T12:01:17.418+08:00  INFO 2432 --- [message-service] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#70e1aa20:0/SimpleConnection@49fb693d [delegate=amqp://drug@192.168.65.151:5672//drug, localPort=50556]
+2024-11-29T12:01:17.551+08:00  INFO 2432 --- [message-service] [main] com.supply.MessageApplication            : Started MessageApplication in 18.588 seconds (process running for 19.328)
+2024-11-29T12:01:17.556+08:00  INFO 2432 --- [message-service] [main] c.a.nacos.client.config.impl.CacheData   : config listener notify warn timeout millis use default 60000 millis 
+2024-11-29T12:01:17.557+08:00  INFO 2432 --- [message-service] [main] c.a.nacos.client.config.impl.CacheData   : nacos.cache.data.init.snapshot = true 
+2024-11-29T12:01:17.557+08:00  INFO 2432 --- [message-service] [main] c.a.n.client.config.impl.ClientWorker    : [fixed-192.168.65.151_8848] [subscribe] message-service+DEFAULT_GROUP
+2024-11-29T12:01:17.567+08:00  INFO 2432 --- [message-service] [main] c.a.nacos.client.config.impl.CacheData   : [fixed-192.168.65.151_8848] [add-listener] ok, tenant=, dataId=message-service, group=DEFAULT_GROUP, cnt=1
+2024-11-29T12:01:17.567+08:00  INFO 2432 --- [message-service] [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=message-service, group=DEFAULT_GROUP
+2024-11-29T12:01:17.567+08:00  INFO 2432 --- [message-service] [main] c.a.n.client.config.impl.ClientWorker    : [fixed-192.168.65.151_8848] [subscribe] message-service.yaml+DEFAULT_GROUP
+2024-11-29T12:01:17.567+08:00  INFO 2432 --- [message-service] [main] c.a.nacos.client.config.impl.CacheData   : [fixed-192.168.65.151_8848] [add-listener] ok, tenant=, dataId=message-service.yaml, group=DEFAULT_GROUP, cnt=1
+2024-11-29T12:01:17.567+08:00  INFO 2432 --- [message-service] [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=message-service.yaml, group=DEFAULT_GROUP
+2024-11-29T12:02:30.128+08:00  INFO 2432 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.supply.message.consumer.EmailConsumer  : 接收到email.direct的消息：{"emailAddress":"2720203124@qq.com","emailType":"LOGIN","location":"局域网[]"},2024-11-29 12:02:30
+2024-11-29T12:02:36.238+08:00  INFO 2432 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] com.supply.message.utils.EmailUtil       : 发送邮件成功：3352580660@qq.com->2720203124@qq.com
+2024-11-29T12:05:12.794+08:00  INFO 2432 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.supply.message.consumer.EmailConsumer  : 接收到email.direct的消息：{"emailAddress":"2720203124@qq.com","emailType":"LOGIN","location":"局域网[]"},2024-11-29 12:05:12
+2024-11-29T12:05:18.371+08:00  INFO 2432 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] com.supply.message.utils.EmailUtil       : 发送邮件成功：3352580660@qq.com->2720203124@qq.com
+2024-11-29T12:16:18.599+08:00  WARN 2432 --- [message-service] [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2024-11-29T12:16:18.599+08:00  WARN 2432 --- [message-service] [Thread-2] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2024-11-29T12:16:18.621+08:00  WARN 2432 --- [message-service] [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2024-11-29T12:16:18.630+08:00  WARN 2432 --- [message-service] [Thread-2] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2024-11-29T12:16:18.738+08:00  INFO 2432 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-11-29T12:16:18.739+08:00  INFO 2432 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-11-29T12:16:18.741+08:00  INFO 2432 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-11-29T12:16:18.742+08:00  INFO 2432 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-11-29T12:16:18.743+08:00  INFO 2432 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-11-29T12:16:19.263+08:00  INFO 2432 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-11-29T12:16:19.679+08:00  INFO 2432 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-11-29T12:16:19.679+08:00  INFO 2432 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-11-29T12:16:19.679+08:00  INFO 2432 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-11-29T12:16:19.725+08:00  INFO 2432 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-11-29T12:16:19.826+08:00  INFO 2432 --- [message-service] [SpringApplicationShutdownHook] c.s.message.config.GrpcServerConfig      : messageService的gRPC服务停止……
+2024-11-29T12:16:37.086+08:00  INFO 15148 --- [message-service] [main] c.a.n.c.c.impl.LocalConfigInfoProcessor  : LOCAL_SNAPSHOT_PATH:C:\Users\jjjj\nacos\config
+2024-11-29T12:16:37.091+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of a6a14287-bebc-4b93-b861-6be966a95b6b_config-0
+2024-11-29T12:16:37.112+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [a6a14287-bebc-4b93-b861-6be966a95b6b_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$491/0x00000201832bf9a8
+2024-11-29T12:16:37.112+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [a6a14287-bebc-4b93-b861-6be966a95b6b_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$492/0x00000201832bfdc8
+2024-11-29T12:16:37.113+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [a6a14287-bebc-4b93-b861-6be966a95b6b_config-0] Registry connection listener to current client:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$1
+2024-11-29T12:16:37.113+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [a6a14287-bebc-4b93-b861-6be966a95b6b_config-0] RpcClient init, ServerListFactory = com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$2
+2024-11-29T12:16:37.120+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [a6a14287-bebc-4b93-b861-6be966a95b6b_config-0] Try to connect to server on start up, server: {serverIp = '192.168.65.151', server main port = 8848}
+2024-11-29T12:16:37.153+08:00  INFO 15148 --- [message-service] [main] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T12:16:38.102+08:00  INFO 15148 --- [message-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Ready to get current node abilities...
+2024-11-29T12:16:38.103+08:00  INFO 15148 --- [message-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Ready to initialize current node abilities, support modes: [SDK_CLIENT]
+2024-11-29T12:16:38.104+08:00  INFO 15148 --- [message-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Initialize current abilities finish...
+2024-11-29T12:16:38.104+08:00  INFO 15148 --- [message-service] [main] c.a.n.c.a.d.NacosAbilityManagerHolder    : [AbilityControlManager] Successfully initialize AbilityControlManager
+2024-11-29T12:16:38.217+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [a6a14287-bebc-4b93-b861-6be966a95b6b_config-0] Success to connect to server [192.168.65.151:8848] on start up, connectionId = 1732853796976_192.168.65.1_52254
+2024-11-29T12:16:38.217+08:00  INFO 15148 --- [message-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.common.remote.client   : [a6a14287-bebc-4b93-b861-6be966a95b6b_config-0] Notify connected event to listeners.
+2024-11-29T12:16:38.217+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [a6a14287-bebc-4b93-b861-6be966a95b6b_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-11-29T12:16:38.217+08:00  INFO 15148 --- [message-service] [com.alibaba.nacos.client.remote.worker.0] c.a.n.client.config.impl.ClientWorker    : [a6a14287-bebc-4b93-b861-6be966a95b6b_config-0] Connected,notify listen context...
+2024-11-29T12:16:38.217+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [a6a14287-bebc-4b93-b861-6be966a95b6b_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$513/0x000002018344a2f8
+2024-11-29T12:16:38.278+08:00  INFO 15148 --- [message-service] [main] c.a.nacos.client.config.impl.Limiter     : limitTime:5.0
+2024-11-29T12:16:38.298+08:00  INFO 15148 --- [message-service] [main] c.a.nacos.client.config.utils.JvmUtil    : isMultiInstance:false
+2024-11-29T12:16:38.351+08:00  WARN 15148 --- [message-service] [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[message-service] & group[DEFAULT_GROUP]
+2024-11-29T12:16:38.359+08:00  WARN 15148 --- [message-service] [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[message-service.yaml] & group[DEFAULT_GROUP]
+2024-11-29T12:16:38.361+08:00  INFO 15148 --- [message-service] [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-message-service.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-message-service,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-shared-jwt.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-shared-rabbitmq.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-shared-mail.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-shared-redis.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-shared-log.yaml,DEFAULT_GROUP'}]
+2024-11-29T12:16:38.380+08:00  INFO 15148 --- [message-service] [main] com.supply.MessageApplication            : No active profile set, falling back to 1 default profile: "default"
+2024-11-29T12:16:38.813+08:00  INFO 15148 --- [message-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-29T12:16:38.814+08:00  INFO 15148 --- [message-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-29T12:16:38.861+08:00  INFO 15148 --- [message-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
+2024-11-29T12:16:39.052+08:00  INFO 15148 --- [message-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3cdf7ab8-2bc1-3e78-8753-9c6e6e8f2bb9
+2024-11-29T12:16:39.740+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from ans.namespace attribute : null
+2024-11-29T12:16:39.741+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+2024-11-29T12:16:39.742+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from namespace attribute :null
+2024-11-29T12:16:39.751+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.client.naming          : FailoverDataSource type is class com.alibaba.nacos.client.naming.backups.datasource.DiskFailoverDataSource
+2024-11-29T12:16:39.756+08:00  INFO 15148 --- [message-service] [main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2024-11-29T12:16:39.757+08:00  INFO 15148 --- [message-service] [main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2024-11-29T12:16:39.761+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of f37b03b6-465e-4893-827f-485dba0be883
+2024-11-29T12:16:39.764+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.client.naming          : Create naming rpc client for uuid->f37b03b6-465e-4893-827f-485dba0be883
+2024-11-29T12:16:39.764+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [f37b03b6-465e-4893-827f-485dba0be883] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2024-11-29T12:16:39.764+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [f37b03b6-465e-4893-827f-485dba0be883] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2024-11-29T12:16:39.764+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [f37b03b6-465e-4893-827f-485dba0be883] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2024-11-29T12:16:39.765+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [f37b03b6-465e-4893-827f-485dba0be883] Try to connect to server on start up, server: {serverIp = '192.168.65.151', server main port = 8848}
+2024-11-29T12:16:39.765+08:00  INFO 15148 --- [message-service] [main] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T12:16:39.895+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [f37b03b6-465e-4893-827f-485dba0be883] Success to connect to server [192.168.65.151:8848] on start up, connectionId = 1732853798760_192.168.65.1_52265
+2024-11-29T12:16:39.895+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [f37b03b6-465e-4893-827f-485dba0be883] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-11-29T12:16:39.895+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [f37b03b6-465e-4893-827f-485dba0be883] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$513/0x000002018344a2f8
+2024-11-29T12:16:39.895+08:00  INFO 15148 --- [message-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.common.remote.client   : [f37b03b6-465e-4893-827f-485dba0be883] Notify connected event to listeners.
+2024-11-29T12:16:39.895+08:00  INFO 15148 --- [message-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.client.naming          : Grpc connection connect
+2024-11-29T12:16:39.897+08:00  INFO 15148 --- [message-service] [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] public registering service message-service-grpc with instance Instance{instanceId='null', ip='192.168.65.1', port=52264, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+2024-11-29T12:16:39.907+08:00  INFO 15148 --- [message-service] [main] c.s.message.config.GrpcServerConfig      : messageService的gRPC服务启动，监听端口：52264
+2024-11-29T12:16:41.588+08:00  INFO 15148 --- [message-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2024-11-29T12:16:52.212+08:00  INFO 15148 --- [message-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2024-11-29T12:16:52.909+08:00  INFO 15148 --- [message-service] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.65.151:5672]
+2024-11-29T12:16:52.964+08:00  INFO 15148 --- [message-service] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#70e1aa20:0/SimpleConnection@49fb693d [delegate=amqp://drug@192.168.65.151:5672//drug, localPort=52475]
+2024-11-29T12:16:53.067+08:00  INFO 15148 --- [message-service] [main] com.supply.MessageApplication            : Started MessageApplication in 19.003 seconds (process running for 19.566)
+2024-11-29T12:16:53.075+08:00  INFO 15148 --- [message-service] [main] c.a.nacos.client.config.impl.CacheData   : config listener notify warn timeout millis use default 60000 millis 
+2024-11-29T12:16:53.075+08:00  INFO 15148 --- [message-service] [main] c.a.nacos.client.config.impl.CacheData   : nacos.cache.data.init.snapshot = true 
+2024-11-29T12:16:53.075+08:00  INFO 15148 --- [message-service] [main] c.a.n.client.config.impl.ClientWorker    : [fixed-192.168.65.151_8848] [subscribe] message-service+DEFAULT_GROUP
+2024-11-29T12:16:53.087+08:00  INFO 15148 --- [message-service] [main] c.a.nacos.client.config.impl.CacheData   : [fixed-192.168.65.151_8848] [add-listener] ok, tenant=, dataId=message-service, group=DEFAULT_GROUP, cnt=1
+2024-11-29T12:16:53.087+08:00  INFO 15148 --- [message-service] [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=message-service, group=DEFAULT_GROUP
+2024-11-29T12:16:53.088+08:00  INFO 15148 --- [message-service] [main] c.a.n.client.config.impl.ClientWorker    : [fixed-192.168.65.151_8848] [subscribe] message-service.yaml+DEFAULT_GROUP
+2024-11-29T12:16:53.088+08:00  INFO 15148 --- [message-service] [main] c.a.nacos.client.config.impl.CacheData   : [fixed-192.168.65.151_8848] [add-listener] ok, tenant=, dataId=message-service.yaml, group=DEFAULT_GROUP, cnt=1
+2024-11-29T12:16:53.088+08:00  INFO 15148 --- [message-service] [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=message-service.yaml, group=DEFAULT_GROUP
+2024-11-29T12:46:05.090+08:00  WARN 15148 --- [message-service] [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2024-11-29T12:46:05.090+08:00  WARN 15148 --- [message-service] [Thread-2] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2024-11-29T12:46:05.099+08:00  WARN 15148 --- [message-service] [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2024-11-29T12:46:05.107+08:00  WARN 15148 --- [message-service] [Thread-2] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2024-11-29T12:46:05.178+08:00  INFO 15148 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-11-29T12:46:05.179+08:00  INFO 15148 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-11-29T12:46:05.180+08:00  INFO 15148 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-11-29T12:46:05.181+08:00  INFO 15148 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-11-29T12:46:05.181+08:00  INFO 15148 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-11-29T12:46:05.341+08:00  INFO 15148 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-11-29T12:46:05.341+08:00  INFO 15148 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-11-29T12:46:05.341+08:00  INFO 15148 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-11-29T12:46:05.356+08:00  INFO 15148 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-11-29T12:46:06.173+08:00  INFO 15148 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-11-29T12:46:06.277+08:00  INFO 15148 --- [message-service] [SpringApplicationShutdownHook] c.s.message.config.GrpcServerConfig      : messageService的gRPC服务停止……
+2024-11-29T12:50:58.493+08:00  INFO 17880 --- [message-service] [main] c.a.n.c.c.impl.LocalConfigInfoProcessor  : LOCAL_SNAPSHOT_PATH:C:\Users\jjjj\nacos\config
+2024-11-29T12:50:58.498+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of ddc055e7-d595-42fc-93a5-780a4292c40b_config-0
+2024-11-29T12:50:58.513+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [ddc055e7-d595-42fc-93a5-780a4292c40b_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$491/0x000001cddb2bfba8
+2024-11-29T12:50:58.514+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [ddc055e7-d595-42fc-93a5-780a4292c40b_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$492/0x000001cddb2c0000
+2024-11-29T12:50:58.514+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [ddc055e7-d595-42fc-93a5-780a4292c40b_config-0] Registry connection listener to current client:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$1
+2024-11-29T12:50:58.514+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [ddc055e7-d595-42fc-93a5-780a4292c40b_config-0] RpcClient init, ServerListFactory = com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$2
+2024-11-29T12:50:58.520+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [ddc055e7-d595-42fc-93a5-780a4292c40b_config-0] Try to connect to server on start up, server: {serverIp = '192.168.65.151', server main port = 8848}
+2024-11-29T12:50:58.588+08:00  INFO 17880 --- [message-service] [main] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T12:50:59.365+08:00  INFO 17880 --- [message-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Ready to get current node abilities...
+2024-11-29T12:50:59.367+08:00  INFO 17880 --- [message-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Ready to initialize current node abilities, support modes: [SDK_CLIENT]
+2024-11-29T12:50:59.368+08:00  INFO 17880 --- [message-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Initialize current abilities finish...
+2024-11-29T12:50:59.368+08:00  INFO 17880 --- [message-service] [main] c.a.n.c.a.d.NacosAbilityManagerHolder    : [AbilityControlManager] Successfully initialize AbilityControlManager
+2024-11-29T12:50:59.477+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [ddc055e7-d595-42fc-93a5-780a4292c40b_config-0] Success to connect to server [192.168.65.151:8848] on start up, connectionId = 1732855858282_192.168.65.1_54805
+2024-11-29T12:50:59.478+08:00  INFO 17880 --- [message-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.common.remote.client   : [ddc055e7-d595-42fc-93a5-780a4292c40b_config-0] Notify connected event to listeners.
+2024-11-29T12:50:59.479+08:00  INFO 17880 --- [message-service] [com.alibaba.nacos.client.remote.worker.0] c.a.n.client.config.impl.ClientWorker    : [ddc055e7-d595-42fc-93a5-780a4292c40b_config-0] Connected,notify listen context...
+2024-11-29T12:50:59.479+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [ddc055e7-d595-42fc-93a5-780a4292c40b_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-11-29T12:50:59.480+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [ddc055e7-d595-42fc-93a5-780a4292c40b_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$513/0x000001cddb44a9b0
+2024-11-29T12:50:59.525+08:00  INFO 17880 --- [message-service] [main] c.a.nacos.client.config.impl.Limiter     : limitTime:5.0
+2024-11-29T12:50:59.539+08:00  INFO 17880 --- [message-service] [main] c.a.nacos.client.config.utils.JvmUtil    : isMultiInstance:false
+2024-11-29T12:50:59.588+08:00  WARN 17880 --- [message-service] [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[message-service] & group[DEFAULT_GROUP]
+2024-11-29T12:50:59.594+08:00  WARN 17880 --- [message-service] [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[message-service.yaml] & group[DEFAULT_GROUP]
+2024-11-29T12:50:59.595+08:00  INFO 17880 --- [message-service] [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-message-service.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-message-service,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-shared-jwt.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-shared-rabbitmq.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-shared-mail.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-shared-redis.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-shared-log.yaml,DEFAULT_GROUP'}]
+2024-11-29T12:50:59.610+08:00  INFO 17880 --- [message-service] [main] com.supply.MessageApplication            : No active profile set, falling back to 1 default profile: "default"
+2024-11-29T12:50:59.954+08:00  INFO 17880 --- [message-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-29T12:50:59.957+08:00  INFO 17880 --- [message-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-29T12:50:59.996+08:00  INFO 17880 --- [message-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
+2024-11-29T12:51:00.145+08:00  INFO 17880 --- [message-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3cdf7ab8-2bc1-3e78-8753-9c6e6e8f2bb9
+2024-11-29T12:51:00.700+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from ans.namespace attribute : null
+2024-11-29T12:51:00.700+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+2024-11-29T12:51:00.700+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from namespace attribute :null
+2024-11-29T12:51:00.707+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.client.naming          : FailoverDataSource type is class com.alibaba.nacos.client.naming.backups.datasource.DiskFailoverDataSource
+2024-11-29T12:51:00.711+08:00  INFO 17880 --- [message-service] [main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2024-11-29T12:51:00.711+08:00  INFO 17880 --- [message-service] [main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2024-11-29T12:51:00.715+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of d1a18527-abb1-4a48-8a44-bc53caf8fbf7
+2024-11-29T12:51:00.717+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.client.naming          : Create naming rpc client for uuid->d1a18527-abb1-4a48-8a44-bc53caf8fbf7
+2024-11-29T12:51:00.717+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [d1a18527-abb1-4a48-8a44-bc53caf8fbf7] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2024-11-29T12:51:00.717+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [d1a18527-abb1-4a48-8a44-bc53caf8fbf7] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2024-11-29T12:51:00.717+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [d1a18527-abb1-4a48-8a44-bc53caf8fbf7] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2024-11-29T12:51:00.718+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [d1a18527-abb1-4a48-8a44-bc53caf8fbf7] Try to connect to server on start up, server: {serverIp = '192.168.65.151', server main port = 8848}
+2024-11-29T12:51:00.718+08:00  INFO 17880 --- [message-service] [main] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:192.168.65.151 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-11-29T12:51:00.832+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [d1a18527-abb1-4a48-8a44-bc53caf8fbf7] Success to connect to server [192.168.65.151:8848] on start up, connectionId = 1732855859710_192.168.65.1_54808
+2024-11-29T12:51:00.832+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [d1a18527-abb1-4a48-8a44-bc53caf8fbf7] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-11-29T12:51:00.832+08:00  INFO 17880 --- [message-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.common.remote.client   : [d1a18527-abb1-4a48-8a44-bc53caf8fbf7] Notify connected event to listeners.
+2024-11-29T12:51:00.832+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.common.remote.client   : [d1a18527-abb1-4a48-8a44-bc53caf8fbf7] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$513/0x000001cddb44a9b0
+2024-11-29T12:51:00.832+08:00  INFO 17880 --- [message-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.client.naming          : Grpc connection connect
+2024-11-29T12:51:00.834+08:00  INFO 17880 --- [message-service] [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] public registering service message-service-grpc with instance Instance{instanceId='null', ip='192.168.65.1', port=54807, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+2024-11-29T12:51:00.842+08:00  INFO 17880 --- [message-service] [main] c.s.message.config.GrpcServerConfig      : messageService的gRPC服务启动，监听端口：54807
+2024-11-29T12:51:02.295+08:00  INFO 17880 --- [message-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2024-11-29T12:51:12.761+08:00  INFO 17880 --- [message-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2024-11-29T12:51:13.707+08:00  INFO 17880 --- [message-service] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.65.151:5672]
+2024-11-29T12:51:13.785+08:00  INFO 17880 --- [message-service] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#1618c98a:0/SimpleConnection@5516ee5 [delegate=amqp://drug@192.168.65.151:5672//drug, localPort=54997]
+2024-11-29T12:51:13.951+08:00  INFO 17880 --- [message-service] [main] com.supply.MessageApplication            : Started MessageApplication in 18.496 seconds (process running for 19.055)
+2024-11-29T12:51:13.959+08:00  INFO 17880 --- [message-service] [main] c.a.nacos.client.config.impl.CacheData   : config listener notify warn timeout millis use default 60000 millis 
+2024-11-29T12:51:13.959+08:00  INFO 17880 --- [message-service] [main] c.a.nacos.client.config.impl.CacheData   : nacos.cache.data.init.snapshot = true 
+2024-11-29T12:51:13.960+08:00  INFO 17880 --- [message-service] [main] c.a.n.client.config.impl.ClientWorker    : [fixed-192.168.65.151_8848] [subscribe] message-service+DEFAULT_GROUP
+2024-11-29T12:51:13.973+08:00  INFO 17880 --- [message-service] [main] c.a.nacos.client.config.impl.CacheData   : [fixed-192.168.65.151_8848] [add-listener] ok, tenant=, dataId=message-service, group=DEFAULT_GROUP, cnt=1
+2024-11-29T12:51:13.974+08:00  INFO 17880 --- [message-service] [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=message-service, group=DEFAULT_GROUP
+2024-11-29T12:51:13.975+08:00  INFO 17880 --- [message-service] [main] c.a.n.client.config.impl.ClientWorker    : [fixed-192.168.65.151_8848] [subscribe] message-service.yaml+DEFAULT_GROUP
+2024-11-29T12:51:13.976+08:00  INFO 17880 --- [message-service] [main] c.a.nacos.client.config.impl.CacheData   : [fixed-192.168.65.151_8848] [add-listener] ok, tenant=, dataId=message-service.yaml, group=DEFAULT_GROUP, cnt=1
+2024-11-29T12:51:13.976+08:00  INFO 17880 --- [message-service] [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=message-service.yaml, group=DEFAULT_GROUP
+2024-11-29T13:03:05.994+08:00  WARN 17880 --- [message-service] [Thread-2] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2024-11-29T13:03:05.994+08:00  WARN 17880 --- [message-service] [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2024-11-29T13:03:06.004+08:00  WARN 17880 --- [message-service] [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2024-11-29T13:03:06.013+08:00  WARN 17880 --- [message-service] [Thread-2] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2024-11-29T13:03:06.092+08:00  INFO 17880 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-11-29T13:03:06.094+08:00  INFO 17880 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-11-29T13:03:06.096+08:00  INFO 17880 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-11-29T13:03:06.096+08:00  INFO 17880 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-11-29T13:03:06.098+08:00  INFO 17880 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-11-29T13:03:06.647+08:00  INFO 17880 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-11-29T13:03:06.662+08:00  INFO 17880 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-11-29T13:03:06.662+08:00  INFO 17880 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-11-29T13:03:06.662+08:00  INFO 17880 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-11-29T13:03:06.770+08:00  INFO 17880 --- [message-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-11-29T13:03:06.846+08:00  INFO 17880 --- [message-service] [SpringApplicationShutdownHook] c.s.message.config.GrpcServerConfig      : messageService的gRPC服务停止……
