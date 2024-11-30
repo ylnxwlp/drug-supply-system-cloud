@@ -49,7 +49,7 @@ public class AuthenticationFilter extends OncePerRequestFilter {
             return;
         }
         try {
-            loginUser = JSON.parseObject((String) jsonData, LoginUser.class);
+            loginUser = JSON.parseObject(jsonData.toString(), LoginUser.class);
         } catch (Exception e) {
             log.error("解析用户登录信息时出现异常, userId: {}, 错误信息: {}", userId, e.getMessage());
             response.setStatus(HttpStatus.SC_INTERNAL_SERVER_ERROR); // 返回500服务器错误

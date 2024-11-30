@@ -121,13 +121,6 @@
 
         <dependency>
             <groupId>com.supply</groupId>
-            <artifactId>drug-gateway</artifactId>
-            <version>1.0.0</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.supply</groupId>
             <artifactId>drug-api</artifactId>
             <version>1.0.0</version>
             <scope>compile</scope>

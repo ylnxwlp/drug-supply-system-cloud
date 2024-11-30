@@ -1,8 +1,8 @@
 package com.supply.filter;
 
 import com.alibaba.fastjson.JSON;
-import com.supply.config.AuthProperties;
 import com.supply.domain.entity.LoginUser;
+import com.supply.properties.AuthProperties;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

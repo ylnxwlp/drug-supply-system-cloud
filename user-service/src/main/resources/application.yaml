@@ -9,12 +9,6 @@ logging:
         mapper: debug
         service: debug
         controller: debug
-spring:
-  cloud:
-    sentinel:
-      transport:
-        dashboard: localhost:8090
-      http-method-specify: true
 drug:
   auth:
     exclude-paths:

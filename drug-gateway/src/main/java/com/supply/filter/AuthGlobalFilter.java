@@ -1,6 +1,6 @@
 package com.supply.filter;
 
-import com.supply.config.AuthProperties;
+import com.supply.properties.AuthProperties;
 import com.supply.properties.JwtProperties;
 import com.supply.utils.JwtUtil;
 import lombok.RequiredArgsConstructor;
